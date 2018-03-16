@@ -1,0 +1,1473 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.VisualStudio.LanguageServer.Protocol.Preview</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItem">
+            <summary>
+            Class which represents an IntelliSense completion item.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItem.Label">
+            <summary>
+            Gets or sets the label value, i.e. display text to users.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItem.Kind">
+            <summary>
+            Gets or sets the completion kind.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItem.Detail">
+            <summary>
+            Gets or sets the completion detail.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItem.Documentation">
+            <summary>
+            Gets or sets the documentation comment.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItem.SortText">
+            <summary>
+            Gets or sets the custom sort text.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItem.FilterText">
+            <summary>
+            Gets or sets the custom filter text.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItem.InsertText">
+            <summary>
+            Gets or sets the insert text.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItem.InsertTextFormat">
+            <summary>
+            Gets or sets the insert text format.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItem.TextEdit">
+            <summary>
+            Gets or sets the text edit.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItem.AdditionalTextEdits">
+            <summary>
+            Gets or sets any additional text edits.
+            </summary>
+            <remarks>
+            Additional text edits must not interfere with the main text edit.
+            </remarks>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItem.Command">
+            <summary>
+            Gets or sets any optional command that will be executed after completion item insertion.
+            </summary>
+            <remarks>
+            This feature is not supported in VS.
+            </remarks>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItem.Data">
+            <summary>
+            Gets or sets any additional data that links the unresolve completion item and the resolved completion item.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemKind">
+            <summary>
+            Enum values for completion item kinds.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemKind.Text">
+            <summary>
+            Text
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemKind.Method">
+            <summary>
+            Method
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemKind.Function">
+            <summary>
+            Function
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemKind.Constructor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemKind.Field">
+            <summary>
+            Field
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemKind.Variable">
+            <summary>
+            Variable
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemKind.Class">
+            <summary>
+            Class
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemKind.Interface">
+            <summary>
+            Interface
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemKind.Module">
+            <summary>
+            Module
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemKind.Property">
+            <summary>
+            Property
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemKind.Unit">
+            <summary>
+            Unit
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemKind.Value">
+            <summary>
+            Value
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemKind.Enum">
+            <summary>
+            Enum
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemKind.Keyword">
+            <summary>
+            Keyword
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemKind.Snippet">
+            <summary>
+            Snippet
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemKind.Color">
+            <summary>
+            Color
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemKind.File">
+            <summary>
+            File
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemKind.Reference">
+            <summary>
+            Reference
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemSetting">
+            <summary>
+            Class which represents initialization setting for completion item.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionItemSetting.SnippetSupport">
+            <summary>
+            Gets or sets a value indicating whether completion items can contain snippets.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionList">
+            <summary>
+            Class which represents a completion list.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionList.IsIncomplete">
+            <summary>
+            Gets or sets a value indicating whether Items is the complete list of items or not.  If incomplete is true, then
+            filtering should ask the server again for completion item.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionList.Items">
+            <summary>
+            Gets or sets the list of completion items.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionOptions">
+            <summary>
+            Class which represents completion capabilities.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionOptions.ResolveProvider">
+            <summary>
+            Gets or sets a value indicating whether server provides completion item resolve capabilities.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionOptions.TriggerCharacters">
+            <summary>
+            Gets or sets the trigger characters.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionSetting">
+            <summary>
+            Class which represents initialization setting for completion.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.CompletionSetting.CompletionItem">
+            <summary>
+            Gets or sets completion item setting.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.MessageTypeConverter">
+            <summary>
+            Converter which offers custom serialization for <see cref="T:Microsoft.VisualStudio.LanguageServer.Protocol.MessageType"/> enum.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.MessageTypeConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <summary>
+            Serializes a MessageType enum value to json.
+            </summary>
+            <param name="writer">Writer to which to output the json value.</param>
+            <param name="value">MessageType enum value.</param>
+            <param name="serializer">Default serializer</param>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.MessageTypeConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <summary>
+            Deserializes a json value to MessageType enum.
+            </summary>
+            <param name="reader">Reader from which to read json value.</param>
+            <param name="objectType">Type of the json value.</param>
+            <param name="existingValue">Existing value.</param>
+            <param name="serializer">Default serializer.</param>
+            <returns>MessageType enum which matches the json value.</returns>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.MessageTypeConverter.CanConvert(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKindConverter">
+            <summary>
+            Converter which provides custom serialization for <see cref="T:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind"/> enum values.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKindConverter.CanConvert(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKindConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <summary>
+            Deserializes a json value to <see cref="T:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind"/> enum.
+            </summary>
+            <param name="reader">Reader from which to read json value.</param>
+            <param name="objectType">Type of the json value.</param>
+            <param name="existingValue">Existing value.</param>
+            <param name="serializer">Default serializer.</param>
+            <returns><see cref="T:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind"/> enum which matches the json value.</returns>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKindConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncConverter">
+            <summary>
+            Converter which offers custom serialization for <see cref="T:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncKind"/> enum to a <see cref="T:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncOptions"/> object.
+            </summary>
+            <remarks>
+            This is to support backwards compatibility for the protocol.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncConverter.CanConvert(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <summary>
+            Deserializes a json value to a <see cref="T:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncOptions"/> object.
+            </summary>
+            <param name="reader">Reader from which to read json value.</param>
+            <param name="objectType">Type of the json value.</param>
+            <param name="existingValue">Existing value.</param>
+            <param name="serializer">Default serializer.</param>
+            <returns>A <see cref="T:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncOptions"/> which matches the json value.</returns>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncKindConverter">
+            <summary>
+            Converter which provides custom serialization for <see cref="T:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncKind"/> enum values.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncKindConverter.CanConvert(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncKindConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <summary>
+            Deserializes a json value to <see cref="T:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncKind"/> enum.
+            </summary>
+            <param name="reader">Reader from which to read json value.</param>
+            <param name="objectType">Type of the json value.</param>
+            <param name="existingValue">Existing value.</param>
+            <param name="serializer">Default serializer.</param>
+            <returns><see cref="T:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncKind"/> enum which matches the json value.</returns>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncKindConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.Diagnostic">
+            <summary>
+            Class which represents a source code diagnostic message.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.Diagnostic.Range">
+            <summary>
+            Gets or sets the source code range.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.Diagnostic.Severity">
+            <summary>
+            Gets or sets the diagnostic severity.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.Diagnostic.Code">
+            <summary>
+            Gets or sets the diagnostic's code.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.Diagnostic.Source">
+            <summary>
+            Gets or sets the source of this diagnostic.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.Diagnostic.Message">
+            <summary>
+            Gets or sets the diagnostic's message.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.DiagnosticSeverity">
+            <summary>
+            Diagnostic severity enum.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.DiagnosticSeverity.Error">
+            <summary>
+            Error
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.DiagnosticSeverity.Warning">
+            <summary>
+            Warning
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.DiagnosticSeverity.Information">
+            <summary>
+            Information
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.DiagnosticSeverity.Hint">
+            <summary>
+            Hint
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.DidChangeConfigurationParams">
+            <summary>
+            Class which represents the parameter sent with workspace/didChangeConfiguration requests.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.DidChangeConfigurationParams.Settings">
+            <summary>
+            Gets or sets the settings that are applicable to the language server.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.DidChangeTextDocumentParams">
+            <summary>
+            Class which represents the parameter that is sent with textDocument/didChange message.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.DidChangeTextDocumentParams.TextDocument">
+            <summary>
+            Gets or sets the document that changed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.DidChangeTextDocumentParams.ContentChanges">
+            <summary>
+            Gets or sets the content changes.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.DidChangeWatchedFilesParams">
+            <summary>
+            Class which represents the parameter that is sent with workspace/didChangeWatchedFiles message.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.DidChangeWatchedFilesParams.Changes">
+            <summary>
+            Gets or sets of the collection of file change events.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.DidCloseTextDocumentParams">
+            <summary>
+            Class which represents the parameter that is sent with textDocument/didClose message.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.DidCloseTextDocumentParams.TextDocument">
+            <summary>
+            Gets or sets the text document identifier.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.DidOpenTextDocumentParams">
+            <summary>
+            Class which represents the parameter that is sent with textDocument/didOpen message.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.DidOpenTextDocumentParams.TextDocument">
+            <summary>
+            Gets or sets the <see cref="T:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentItem"/> which represents the text document that was opened.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.DocumentFormattingParams">
+            <summary>
+            Class which represents the parameter that is sent with textDocument/formatting message.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.DocumentFormattingParams.TextDocument">
+            <summary>
+            Gets or sets the identifier for the text document to be formatted.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.DocumentFormattingParams.Options">
+            <summary>
+            Gets or sets the formatting options.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.DocumentRangeFormattingParams">
+            <summary>
+            Class which represents the parameter that is sent with textDocument/rangeFormatting message.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.DocumentRangeFormattingParams.TextDocument">
+            <summary>
+            Gets or sets the identifier for the text document to be formatted.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.DocumentRangeFormattingParams.Range">
+            <summary>
+            Gets or sets the selection range to be formatted.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.DocumentRangeFormattingParams.Options">
+            <summary>
+            Gets or sets the formatting options.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.DocumentSymbolParams">
+            <summary>
+            Class which represents the parameter sent with textDocument/documentSymbol requests.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.DocumentSymbolParams.TextDocument">
+            <summary>
+            Gets or sets the text document.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.DynamicRegistrationSetting">
+            <summary>
+            Class which represents a setting that can be dynamically registered.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.DynamicRegistrationSetting.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.VisualStudio.LanguageServer.Protocol.DynamicRegistrationSetting"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.DynamicRegistrationSetting.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.VisualStudio.LanguageServer.Protocol.DynamicRegistrationSetting"/> class.
+            </summary>
+            <param name="value">Value indicating whether the setting can be dynamically registered.</param>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.DynamicRegistrationSetting.DynamicRegistration">
+            <summary>
+            Gets or sets a value indicating whether setting can be dynamically registered.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.FileChangeType">
+            <summary>
+            File event type enum.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.FileChangeType.Created">
+            <summary>
+            File was created.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.FileChangeType.Changed">
+            <summary>
+            File was changed.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.FileChangeType.Deleted">
+            <summary>
+            File was deleted.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.FileEvent">
+            <summary>
+            Class which represents a file change event.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.FileEvent.Uri">
+            <summary>
+            Gets or sets the URI of the file.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.FileEvent.FileChangeType">
+            <summary>
+            Gets or sets the file change type.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.FormattingOptions">
+            <summary>
+            Class which represents formatting options.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.FormattingOptions.TabSize">
+            <summary>
+            Gets or sets the number of spaces to be inserted per tab.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.FormattingOptions.InsertSpaces">
+            <summary>
+            Gets or sets a value indicating whether tabs should be spaces.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.InitializeResult">
+            <summary>
+            Class which represents the result returned by the initialize request.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.InitializeResult.Capabilities">
+            <summary>
+            Gets or sets the server capabilities.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.InsertTextFormat">
+            <summary>
+            Enum representing insert text format for completion items.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.InsertTextFormat.Plaintext">
+            <summary>
+            Completion item insertion is plaintext.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.InsertTextFormat.Snippet">
+            <summary>
+            Completion item insertion is snippet.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.Location">
+            <summary>
+            Class representing a location in a document.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.Location.Uri">
+            <summary>
+            Gets or sets the URI for the document the location belongs to.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.Location.Range">
+            <summary>
+            Gets or sets the range of the location in the document.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.Location.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.Location.Equals(Microsoft.VisualStudio.LanguageServer.Protocol.Location)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.Location.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.MessageActionItem">
+            <summary>
+            Class which represent an action the user performs after a window/showMessageRequest request is sent.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.MessageActionItem.Title">
+            <summary>
+            Gets or sets the title.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.Position">
+            <summary>
+            Class which represents a position on a text document.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.Position.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.VisualStudio.LanguageServer.Protocol.Position"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.Position.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.VisualStudio.LanguageServer.Protocol.Position"/> class.
+            </summary>
+            <param name="line">Line number.</param>
+            <param name="character">Character number.</param>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.Position.Line">
+            <summary>
+            Gets or sets the line number.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.Position.Character">
+            <summary>
+            Gets or sets the character number.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.Position.Equals(System.Object)">
+            <summary>
+            Overrides base class method <see cref="M:System.Object.Equals(System.Object)"/>. Two positions are equal if their line and character are the same.
+            </summary>
+            <param name="obj">Object to compare to.</param>
+            <returns>True if the given position has the same line and character; false otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.Position.Equals(Microsoft.VisualStudio.LanguageServer.Protocol.Position)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.Position.GetHashCode">
+            <summary>
+            Overrides base class method <see cref="M:System.Object.GetHashCode"/>
+            </summary>
+            <returns>Hashcode for this object.</returns>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.Position.op_Equality(Microsoft.VisualStudio.LanguageServer.Protocol.Position,Microsoft.VisualStudio.LanguageServer.Protocol.Position)">
+            <summary>
+            Overrides default equals operator.  Two positions are equal if they are both null or one of them is the object equivalent of the other.
+            </summary>
+            <param name="firstPosition">The first position to compare.</param>
+            <param name="secondPosition">The second position to compare.</param>
+            <returns>True if both positions are null or one of them is the object equivalent of the other, false otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.Position.op_Inequality(Microsoft.VisualStudio.LanguageServer.Protocol.Position,Microsoft.VisualStudio.LanguageServer.Protocol.Position)">
+            <summary>
+            Overrides the default not equals operator.
+            </summary>
+            <param name="firstPosition">The first position to compare.</param>
+            <param name="secondPosition">The second position to compare.</param>
+            <returns>True if first and second positions are not equivalent.</returns>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.ClientCapabilities">
+            <summary>
+            Class which represents client capabilities.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.ClientCapabilities.Workspace">
+            <summary>
+            Gets or sets the workspace capabilities.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.ClientCapabilities.TextDocument">
+            <summary>
+            Gets or sets the text document capabilities.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.ClientCapabilities.Experimental">
+            <summary>
+            Gets or sets the experimental capabilities.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.InitializeParams">
+            <summary>
+            Class which represents the parameter sent with an initialize method request.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.InitializeParams.ProcessId">
+            <summary>
+            Gets or sets the ID of the process which launched the language server.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.InitializeParams.RootPath">
+            <summary>
+            Gets or sets the workspace root path.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.InitializeParams.RootUri">
+            <summary>
+            Gets or sets the workspace root path.
+            </summary>
+            <remarks>
+            This should be a string representation of an URI.
+            </remarks>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.InitializeParams.Capabilities">
+            <summary>
+            Gets or sets the capabilities supported by the client.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.InitializeParams.InitializationOptions">
+            <summary>
+            Gets or sets the initialization options as specified by the client.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.InitializeParams.Trace">
+            <summary>
+            Gets or sets the initial trace setting.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.LogMessageParams">
+            <summary>
+            Class which represents parameter sent with window/logMessage requests.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.LogMessageParams.MessageType">
+            <summary>
+            Gets or sets the type of message.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.LogMessageParams.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.MessageType">
+            <summary>
+            Message type enum.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.MessageType.Error">
+            <summary>
+            Error message.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.MessageType.Warning">
+            <summary>
+            Warning message.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.MessageType.Info">
+            <summary>
+            Info message.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.MessageType.Log">
+            <summary>
+            Log message.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.Methods">
+            <summary>
+            Class which contains the string values for all common language protocol methods.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.Methods.Initialize">
+            <summary>
+            Method name for 'initialize'.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.Methods.TextDocumentCompletion">
+            <summary>
+            Method name for 'textDocument/completion'.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.Methods.TextDocumentCompletionResolve">
+            <summary>
+            Method name for 'completionItem/resolve'.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.Methods.TextDocumentDefinition">
+            <summary>
+            Method name for 'textDocument/definition'.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.Methods.TextDocumentDidOpen">
+            <summary>
+            Method name for 'textDocument/didOpen'.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.Methods.TextDocumentDidClose">
+            <summary>
+            Method name for 'textDocument/didClose'.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.Methods.TextDocumentDidChange">
+            <summary>
+            Method name for 'textDocument/didChange'.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.Methods.TextDocumentDocumentSymbol">
+            <summary>
+            Method name for 'textDocument/documentSymbol'.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.Methods.TextDocumentFormatting">
+            <summary>
+            Method name for 'textDocument/formatting'.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.Methods.TextDocumentRangeFormatting">
+            <summary>
+            Method name for 'textDocument/rangeFormatting'.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.Methods.TextDocumentPublishDiagnostics">
+            <summary>
+            Method name for 'textDocument/publishDiagnostics'.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.Methods.TextDocumentReferences">
+            <summary>
+            Method name for 'textDocument/references'.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.Methods.WindowLogMessage">
+            <summary>
+            Method name for 'window/logMessage'.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.Methods.WindowShowMessage">
+            <summary>
+            Method name for 'window/showMessage'.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.Methods.WindowShowMessageRequest">
+            <summary>
+            Method name for 'window/showMessageRequest'.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.Methods.WorkspaceDidChangeConfiguration">
+            <summary>
+            Method name for 'workspace/didChangeConfiguration'.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.Methods.WorkspaceSymbol">
+            <summary>
+            Method name for 'workspace/symbol'.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.Methods.WorkspaceDidChangeWatchedFiles">
+            <summary>
+            Method name for 'workspace/didChangeWatchedFiles'.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.Methods.Shutdown">
+            <summary>
+            Method name for 'shutdown'.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.Methods.Exit">
+            <summary>
+            Method name for 'exit'.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.Resources.TextDocumentSyncSerializationError">
+            <summary>
+              Looks up a localized string similar to Unable to deserialize TextDocumentSyncOptions.  Unexpected value encountered: {0}.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.PublishDiagnosticParams">
+            <summary>
+            Class which represents the parameter that's sent with 'textDocument/publishDiagnostics' messages.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.PublishDiagnosticParams.Uri">
+            <summary>
+            Gets or sets the URI of the text document.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.PublishDiagnosticParams.Diagnostics">
+            <summary>
+            Gets or sets the collection of diagnostics.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.Range">
+            <summary>
+            Class which represents a text document text range.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.Range.Start">
+            <summary>
+            Gets or sets the text start position.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.Range.End">
+            <summary>
+            Gets or sets the text end position.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.Range.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.Range.Equals(Microsoft.VisualStudio.LanguageServer.Protocol.Range)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.Range.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.ReferenceContext">
+            <summary>
+            Class representing reference context information for find reference request parameter.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.ReferenceContext.IncludeDeclaration">
+            <summary>
+            Gets or sets a value indicating whether declaration should be included.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.ReferenceParams">
+            <summary>
+            Class representing find reference parameter for find reference request.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.ReferenceParams.Context">
+            <summary>
+            Gets or sets the reference context.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.SaveOptions">
+            <summary>
+            Class which represents save option configurations.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.SaveOptions.IncludeText">
+            <summary>
+            Gets or sets a value indicating whether clients include text content on save.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.ServerCapabilities">
+            <summary>
+            Class which represents server capabilities
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.ServerCapabilities.TextDocumentSync">
+            <summary>
+            Gets or sets the value which indicates how text document are synced.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.ServerCapabilities.CompletionProvider">
+            <summary>
+            Gets or sets the value which indicates if completions are supported.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.ServerCapabilities.DefinitionProvider">
+            <summary>
+            Gets or sets a value indicating whether go to definition is supported.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.ServerCapabilities.ReferencesProvider">
+            <summary>
+            Gets or sets a value indicating whether find all references is supported.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.ServerCapabilities.WorkspaceSymbolProvider">
+            <summary>
+            Gets or sets a value indicating whether workspace symbols are supported.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.ServerCapabilities.DocumentSymbolProvider">
+            <summary>
+            Gets or sets a value indicating whether document symbols are supported.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.ServerCapabilities.DocumentFormattingProvider">
+            <summary>
+            Gets or sets a value indicating whether document formatting is supported.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.ServerCapabilities.DocumentRangeFormattingProvider">
+            <summary>
+            Gets or sets a value indicating whether document range formatting is supported.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.ShowMessageParams">
+            <summary>
+            Class which represents parameter sent with window/showMessage requests.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.ShowMessageParams.MessageType">
+            <summary>
+            Gets or sets the type of message.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.ShowMessageParams.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.ShowMessageRequestParams">
+            <summary>
+            Class which represents parameter sent with window/showMessageRequest requests.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.ShowMessageRequestParams.Actions">
+            <summary>
+            Gets or sets an array of <see cref="T:Microsoft.VisualStudio.LanguageServer.Protocol.MessageActionItem"/>s to present.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolInformation">
+            <summary>
+            Class representing information about programming constructs like variables, classes, interfaces, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolInformation.Name">
+            <summary>
+            Gets or sets the name of this symbol.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolInformation.Kind">
+            <summary>
+            Gets or sets the <see cref="T:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind"/> of this symbol.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolInformation.Location">
+            <summary>
+            Gets or sets the <see cref="T:Microsoft.VisualStudio.LanguageServer.Protocol.Location"/> of this symbol.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolInformation.ContainerName">
+            <summary>
+            Gets or sets the name of the symbol containing this symbol.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolInformation.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolInformation.Equals(Microsoft.VisualStudio.LanguageServer.Protocol.SymbolInformation)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolInformation.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind">
+            <summary>
+            Enum which represents the various kinds of symbols.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind.File">
+            <summary>
+            Symbol is a file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind.Module">
+            <summary>
+            Symbol is a module.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind.Namespace">
+            <summary>
+            Symbol is a namespace.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind.Package">
+            <summary>
+            Symbol is a package.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind.Class">
+            <summary>
+            Symbol is a class.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind.Method">
+            <summary>
+            Symbol is a method.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind.Property">
+            <summary>
+            Symbol is a property.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind.Field">
+            <summary>
+            Symbol is a field.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind.Constructor">
+            <summary>
+            Symbol is a constructor.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind.Enum">
+            <summary>
+            Symbol is an enum.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind.Interface">
+            <summary>
+            Symbol is an interface.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind.Function">
+            <summary>
+            Symbol is a function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind.Variable">
+            <summary>
+            Symbol is a variable.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind.Constant">
+            <summary>
+            Symbol is a constant.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind.String">
+            <summary>
+            Symbol is a string.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind.Number">
+            <summary>
+            Symbol is a number.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind.Boolean">
+            <summary>
+            Symbol is a boolean.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.SymbolKind.Array">
+            <summary>
+            Symbol is an array.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.SynchronizationSetting">
+            <summary>
+            Class which represents synchronization initialization setting.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.SynchronizationSetting.WillSave">
+            <summary>
+            Gets or sets a value indicating whether WillSave event is supported.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.SynchronizationSetting.WillSaveWaitUntil">
+            <summary>
+            Gets or sets a value indicating whether WillSaveWaitUntil event is supported.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.SynchronizationSetting.DidSave">
+            <summary>
+            Gets or sets a value indicating whether DidSave event is supported.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentClientCapabilities">
+            <summary>
+            Class which represents text document capabilities.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentClientCapabilities.Synchronization">
+            <summary>
+            Gets or sets the synchronization setting.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentClientCapabilities.Completion">
+            <summary>
+            Gets or sets the completion setting.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentClientCapabilities.Hover">
+            <summary>
+            Gets or sets the setting which determines if hover can be dynamically registered.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentClientCapabilities.SignatureHelp">
+            <summary>
+            Gets or sets the setting which determines if signature help can be dynamically registered.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentClientCapabilities.References">
+            <summary>
+            Gets or sets the setting which determines if references can be dynamically registered.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentClientCapabilities.DocumentHighlight">
+            <summary>
+            Gets or sets the setting which determines if document highlight can be dynamically registered.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentClientCapabilities.DocumentSymbol">
+            <summary>
+            Gets or sets the setting which determines if document symbol can be dynamically registered.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentClientCapabilities.Formatting">
+            <summary>
+            Gets or sets the setting which determines if formatting can be dynamically registered.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentClientCapabilities.RangeFormatting">
+            <summary>
+            Gets or sets the setting which determines if range formatting can be dynamically registered.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentClientCapabilities.OnTypeFormatting">
+            <summary>
+            Gets or sets the setting which determines if on type formatting can be dynamically registered.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentClientCapabilities.Definition">
+            <summary>
+            Gets or sets the setting which determines if definition can be dynamically registered.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentClientCapabilities.CodeAction">
+            <summary>
+            Gets or sets the setting which determines if code action can be dynamically registered.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentClientCapabilities.CodeLens">
+            <summary>
+            Gets or sets the setting which determines if code lens can be dynamically registered.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentClientCapabilities.DocumentLink">
+            <summary>
+            Gets or sets the setting which determines if document link can be dynamically registered.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentClientCapabilities.Rename">
+            <summary>
+            Gets or sets the setting which determines if rename can be dynamically registered.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentContentChangeEvent">
+            <summary>
+            Class which encapsulates a text document changed event.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentContentChangeEvent.Range">
+            <summary>
+            Gets or sets the range of the text that was changed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentContentChangeEvent.RangeLength">
+            <summary>
+            Gets or sets the length of the range that got replaced.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentContentChangeEvent.Text">
+            <summary>
+            Gets or sets the new text of the range/document.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentIdentifier">
+            <summary>
+            Class which identifies a text document.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentIdentifier.Uri">
+            <summary>
+            Gets or sets the URI of the text document.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentItem">
+            <summary>
+            Class which represents a text document.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentItem.Uri">
+            <summary>
+            Gets or sets the document URI.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentItem.LanguageId">
+            <summary>
+            Gets or sets the document language identifier.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentItem.Version">
+            <summary>
+            Gets or sets the document version.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentItem.Text">
+            <summary>
+            Gets or sets the content of the opened text document.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentPositionParams">
+            <summary>
+            Class which represents a position within a text document.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentPositionParams.TextDocument">
+            <summary>
+            Gets or sets the value which identifies the document.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentPositionParams.Position">
+            <summary>
+            Gets or sets the value which indicates the position within the document.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncKind">
+            <summary>
+            Enum which represents the various ways to sync text documents.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncKind.None">
+            <summary>
+            Documents should not be synced at all.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncKind.Full">
+            <summary>
+            Documents are synced by always sending the full text.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncKind.Incremental">
+            <summary>
+            Documents are synced by sending only incremental updates.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncOptions">
+            <summary>
+            Class which represents configuration values indicating how text documents should be synced.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncOptions.OpenClose">
+            <summary>
+            Gets or sets a value indicating whether open and close notifications are sent to the server.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncOptions.Change">
+            <summary>
+            Gets or sets the value indicating how text documents are synced with the server.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncOptions.WillSave">
+            <summary>
+            Gets or sets a value indicating whether 'will save' notifications are sent to the server.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncOptions.WillSaveUntil">
+            <summary>
+            Gets or sets a value indicating whether 'will save until' notifications are sent to the server.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextDocumentSyncOptions.Save">
+            <summary>
+            Gets or sets a value indicating whether save notifications are sent to the server.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.TextEdit">
+            <summary>
+            Class which represents a text edit to a document.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextEdit.Range">
+            <summary>
+            Gets or sets the value which indicates the range of the text edit.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.TextEdit.NewText">
+            <summary>
+            Gets or sets the value of the new text.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.TraceSetting">
+            <summary>
+            Enum which represents language server trace setting.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.TraceSetting.Off">
+            <summary>
+            Setting for 'off'.
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.TraceSetting.Messages">
+            <summary>
+            Setting for 'messages'
+            </summary>
+        </member>
+        <member name="F:Microsoft.VisualStudio.LanguageServer.Protocol.TraceSetting.Verbose">
+            <summary>
+            Setting for 'verbose'
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.VersionedTextDocumentIdentifier">
+            <summary>
+            Class which represents a text document, but has a version identifier.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.VersionedTextDocumentIdentifier.Version">
+            <summary>
+            Gets or sets the version of the document.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.WorkspaceClientCapabilities">
+            <summary>
+            Class which represents workspace capabilities.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.WorkspaceClientCapabilities.ApplyEdit">
+            <summary>
+            Gets or sets a value indicating whether apply edit is supported.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.WorkspaceClientCapabilities.WorkspaceEdit">
+            <summary>
+            Gets or sets the workspace edit setting.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.WorkspaceClientCapabilities.DidChangeConfiguration">
+            <summary>
+            Gets or sets the setting which determines if did change configuration can be dynamically registered.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.WorkspaceClientCapabilities.DidChangeWatchedFiles">
+            <summary>
+            Gets or sets the setting which determines if did change watched files can be dynamically registered.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.WorkspaceClientCapabilities.Symbol">
+            <summary>
+            Gets or sets the setting which determines if symbols can be dynamically registered.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.WorkspaceClientCapabilities.ExecuteCommand">
+            <summary>
+            Gets or sets the setting which determines if execute command can be dynamically registered.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.WorkspaceEditSetting">
+            <summary>
+            Class which represents initialization settings for workspace edit.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.WorkspaceEditSetting.DocumentChanges">
+            <summary>
+            Gets or sets a value indicating whether document changes event is supported.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.LanguageServer.Protocol.WorkspaceSymbolParams">
+            <summary>
+            Class which represents the parameter that's sent with the 'workspace/symbol' request.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.LanguageServer.Protocol.WorkspaceSymbolParams.Query">
+            <summary>
+            Gets or sets the query (a non-empty string).
+            </summary>
+        </member>
+    </members>
+</doc>
